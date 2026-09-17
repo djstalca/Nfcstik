@@ -16,7 +16,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
@@ -249,8 +248,8 @@ private fun NfcVizitkaScreen(
                         Switch(
                             checked = sharingEnabled,
                             enabled = controller.isHceAvailable,
-                            onCheckedChange = { enabled ->
-                                if (enabled && !saveProfile(showToast = false)) return@Switch
+                            onCheckedChange = change@{ enabled ->
+                                if (enabled && !saveProfile(showToast = false)) return@change
                                 sharingEnabled = enabled
                                 repository.setNfcSharingEnabled(enabled)
                                 controller.setSharingEnabled(enabled)
