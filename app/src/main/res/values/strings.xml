@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NFC Vizitka</string>
+    <string name="hce_service_description">NFC vizitka – vCard deljenje</string>
+    <string name="hce_aid_description">NFC Forum NDEF Type 4 Tag</string>
+</resources>
