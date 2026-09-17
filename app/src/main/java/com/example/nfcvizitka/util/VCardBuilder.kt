@@ -12,22 +12,22 @@ object VCardBuilder {
         )
 
         profile.company.takeIf { it.isNotBlank() }?.let {
-            lines += "ORG:${escape(it)}"
+            lines += "ORG:${escape(it.trim())}"
         }
         profile.jobTitle.takeIf { it.isNotBlank() }?.let {
-            lines += "TITLE:${escape(it)}"
+            lines += "TITLE:${escape(it.trim())}"
         }
         profile.phone.takeIf { it.isNotBlank() }?.let {
-            lines += "TEL;TYPE=CELL:${escape(it)}"
+            lines += "TEL;TYPE=CELL:${escape(ContactFormat.normalizePhoneForVCard(it))}"
         }
         profile.email.takeIf { it.isNotBlank() }?.let {
-            lines += "EMAIL;TYPE=INTERNET:${escape(it)}"
+            lines += "EMAIL;TYPE=INTERNET:${escape(it.trim())}"
         }
         profile.website.takeIf { it.isNotBlank() }?.let {
-            lines += "URL:${escape(it)}"
+            lines += "URL:${escape(ContactFormat.normalizeWebsite(it))}"
         }
         profile.note.takeIf { it.isNotBlank() }?.let {
-            lines += "NOTE:${escape(it)}"
+            lines += "NOTE:${escape(it.trim())}"
         }
 
         lines += "END:VCARD"

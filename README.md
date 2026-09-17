@@ -4,13 +4,18 @@ Android aplikacija za lokalno shranjevanje kontaktnih podatkov in neposredno del
 
 ## Funkcije
 
+- čist začetni zaslon s predogledom vizitke in stanjem NFC
+- ločen zaslon za urejanje podatkov z validacijo imena, e-pošte in spletnega naslova
 - vnos imena, priimka, podjetja, delovnega mesta, telefona, e-pošte, spletne strani in opombe
 - lokalno shranjevanje v `SharedPreferences`
 - Android Host Card Emulation (HCE), ki emulira NFC Forum Type 4 NDEF tag
 - neposreden `text/vcard` zapis brez spletne strani ali strežnika
 - QR koda z istim vCard kontaktom
 - stikalo za vklop/izklop NFC deljenja
-- `requireDeviceUnlock=true`, zato je telefon pri NFC deljenju odklenjen
+- pregled sistemskega NFC stanja in bližnjica do NFC nastavitev
+- `requireDeviceUnlock=true`, zato mora biti telefon pri NFC deljenju odklenjen
+- Material 3, dinamične sistemske barve in podpora temnemu načinu
+- prilagodljiva ikona aplikacije
 - brez dovoljenja za internet
 
 ## Zahteve
@@ -39,10 +44,10 @@ app/build/outputs/apk/debug/app-debug.apk
 
 ## Test NFC
 
-1. V aplikaciji vpiši kontakt in pritisni **Shrani podatke**.
-2. Vključi **NFC deljenje**.
+1. V aplikaciji vpiši kontakt in ga shrani.
+2. Vključi **Deljenje prek NFC**.
 3. Preveri, da je sistemski NFC vključen in telefon odklenjen.
-4. Hrbtno stran telefona približaj NFC anteni drugega telefona.
+4. Hrbtno stran telefona približaj NFC območju drugega telefona.
 5. Prejemni telefon prebere emuliran Type 4 NDEF tag in dobi `text/vcard` zapis.
 
 Obdelava vCard NDEF zapisov se lahko razlikuje med modeli telefonov, zato je QR koda vključena kot rezerva.
