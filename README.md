@@ -18,7 +18,7 @@ Android aplikacija za lokalno shranjevanje kontaktnih podatkov in neposredno del
 - Android 8.0+ (`minSdk 26`)
 - za NFC deljenje telefon z NFC in `android.hardware.nfc.hce`
 - JDK 17
-- Android SDK 37
+- Android SDK 36
 - Gradle 9.6.0
 
 ## Gradnja
@@ -55,3 +55,5 @@ Obdelava vCard NDEF zapisov se lahko razlikuje med modeli telefonov, zato je QR 
 - Type 4 mapping: 2.0
 - MIME: `text/vcard`
 - vCard: 3.0
+- `compileSdk` / `targetSdk`: 36
+- Compose BOM: `2026.04.01`
