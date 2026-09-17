@@ -35,6 +35,12 @@ jobs:
           yes | sdkmanager --licenses >/dev/null 2>&1 || true
           sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
 
+      - name: Restore stable debug signing key
+        uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: nfcvizitka-debug-keystore-v1
+
       - name: Set up Gradle 9.6.0
         uses: gradle/actions/setup-gradle@v4
         with:

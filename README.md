@@ -28,7 +28,7 @@ Android aplikacija za lokalno shranjevanje kontaktnih podatkov in neposredno del
 
 ## Gradnja
 
-GitHub Actions ob vsakem pushu na `main` požene teste in izdela debug APK.
+GitHub Actions ob vsakem pushu na `main` požene teste in izdela debug APK. Debug signing key se hrani v GitHub Actions cache, zato imajo zaporedni APK-ji z `main` isto podpisno identiteto, dokler je ta cache na voljo.
 
 Lokalno lahko po namestitvi Gradle 9.6.0 poženeš:
 
@@ -62,3 +62,4 @@ Obdelava vCard NDEF zapisov se lahko razlikuje med modeli telefonov, zato je QR 
 - vCard: 3.0
 - `compileSdk` / `targetSdk`: 36
 - Compose BOM: `2026.04.01`
+- trenutna aplikacijska različica: `1.1.0` (`versionCode 2`)
